@@ -3,18 +3,11 @@
   connection: local 
   gather_facts: no
   tasks:
-    - name: build container image
+    - name: Build an image and push it to a private repo
       docker_image:
-        name: myapp
         build:
-          path: ./
-          source: build
-        state: present
-    - name: "tag the image"
-      docker_image:
-        name: "myapp"
-        repository: "taran20singh/app:v1"
-    - name: "push to docker registry"
-      docker_image:
-        name: "taran20singh/app:v1"
+          path: .
+        name: rtaran20singh/myapp
+        tag: v1
         push: yes
+        source: build
