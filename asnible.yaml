@@ -1,0 +1,19 @@
+---
+- hosts: build_host
+  gather_facts: no
+  tasks:
+    - name: build container image
+      docker_image:
+        name: myapp
+        build:
+          path: ./
+          source: build
+        state: present
+    - name: "tag the image"
+      docker_image:
+        name: "myapp"
+        repository: "taran20singh/app:v1"
+    - name: "push to docker registry"
+      docker_image:
+        name: "taran20singh/app:v1"
+        push: yes
