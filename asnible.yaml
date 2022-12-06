@@ -1,5 +1,6 @@
 ---
-- hosts: build_host
+- hosts: localhost
+  connection: local 
   gather_facts: no
   tasks:
     - name: build container image
