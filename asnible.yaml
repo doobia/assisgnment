@@ -7,7 +7,7 @@
       docker_image:
         build:
           path: .
-        name: rtaran20singh/myapp
+        name: taran20singh/myapp
         tag: v1
         push: yes
         source: build
