@@ -1,3 +1,0 @@
-    manifest_base_dir: /kubernetes_manifests
-    manifest_app_dir: "{{manifest_base_dir}}/{{app.name}}"
-    deployment_file: "kube.deployment.yml"
